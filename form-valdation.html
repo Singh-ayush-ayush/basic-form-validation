@@ -71,10 +71,24 @@
     loginForm.addEventListener("submit", function(event){
         event.preventDefault();
           
-       if(checkError()){
+        if(checkError()){
         alert("form submitted successfully");
-        document.querySelector(".input").innerHTML="";
-       }
+        userName.value="";
+        password.value="";
+        let clearPage = document.body.innerHTML=` 
+          <style>
+            body{
+             background-colour : white;
+            }
+            
+            h1{
+             display:flex
+             justify-content:center;
+             align-item:center;
+            }
+          </style>
+          <h1> your info has been submitted please wait a while!</h1>
+        `; }
     });
 
        function checkError(){
